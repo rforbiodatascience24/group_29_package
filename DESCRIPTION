@@ -37,16 +37,6 @@ Depends:
 RoxygenNote: 7.2.3
 Imports: 
     ggplot2 (>= 3.4.3),
-<<<<<<< HEAD
     stringr (>= 1.5.0),
     testthat
-=======
-<<<<<<< HEAD
-    stringr (>= 1.5.0),
-    testthat
-RoxygenNote: 7.3.2
-=======
-    stringr (>= 1.5.0)
->>>>>>> aa8674c1e525ea02dde27024fa23a4309242ae6a
 Config/testthat/edition: 3
->>>>>>> 47418b69357edf3a956523f5b5543840e378bb1c
