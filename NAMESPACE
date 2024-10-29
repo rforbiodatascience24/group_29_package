@@ -2,12 +2,9 @@
 
 export(T_to_U_converter)
 export(amino_acid_plot)
-<<<<<<< HEAD
-export(convert_T_to_U)
-=======
 export(codon_to_AA)
+export(convert_T_to_U)
 export(nucleotide_sequence_sampler)
->>>>>>> aa8674c1e525ea02dde27024fa23a4309242ae6a
 importFrom(ggplot2,aes)
 importFrom(ggplot2,geom_col)
 importFrom(ggplot2,ggplot)
