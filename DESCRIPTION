@@ -1,0 +1,34 @@
+Package: hejpakken
+Type: Package
+Title: Central dogma functions, group 29
+Version: 0.1.0
+Authors@R:
+  c(person(given = "Emma",
+           family = "Klostergaard",
+           role = c("aut", "cre"), # There must be a "cre", but there can only be one
+           email = "s204543@dtu.dk"), 
+    person(given = "Casper",
+           family = "Harreby",
+           role = "aut",
+           email = "s204558@dtu.dk"),
+    person(given = "Helena",
+           family = "Møller",
+           role = "aut",
+           email = "s204585@dtu.dk"),
+    person(given = "Frederik",
+           family = "Holmstrup",
+           role = "aut",
+           email = "freho@dtu.dk"),
+    person(given = "Laura",
+           family = "Christiansen",
+           role = "aut",
+           email = "s204582@dtu.dk"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: The pakage consist of central dogma functions
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
