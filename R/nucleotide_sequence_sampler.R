@@ -11,3 +11,4 @@ nucleotide_sequence_sampler <- function(sequence_length){
   nucleotide_sequence <- paste0(nucleotide_samples, collapse = "")
   return(nucleotide_sequence)
 }
+
