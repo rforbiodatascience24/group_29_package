@@ -20,13 +20,23 @@ library(hejpakken)
 
 ## Description
 
+Hej,
+
+This package is used for creating functions that can help automation of converting a DNA sequence into a sequence of amino acids. This represents the different steps in protein synthesis which is a part of the central dogma.
+
 ## Functions of hejpakken
 
 In hejpakken there are 5 builtin functions:
 
 1.  Nucleotide_sequence_sampler
 
-2.  Amino_acid_plot
+2.  convert_T_to_U
+
+3.  extract_codons
+
+4.  codon_to_AA
+
+5.  Amino_acid_plot
 
 ### Nucleotide sequence sampler
 
@@ -39,6 +49,42 @@ example_sequence_24 <- nucleotide_sequence_sampler(24)
 print(example_sequence_24)
 ```
 
+### Convert T to U
+
+The converter of T to U changes DNA sequences into RNA sequences. This is done by converting "T" to "U" in strings.
+
+An example is written here:
+
+```{r}
+DNA_sequence <- "ACGTTGCA" 
+
+RNA_sequence <- convert_T_to_U(DNA_sequence)
+
+RNA_sequence
+```
+
+### Extract codons
+
+The code extract function splits one string representing a RNA sequence into several different codons. For each three letters (nucleotides) in the input string, a new string containing three letters will be formed.
+
+An example is presented here:
+
+```{r}
+RNA_sequence <- "ACGUUGCA"
+extract_codons(RNA_sequence)
+```
+
+### Codon to Amino Acids
+
+This function takes a list of strings containing three letters representing nucleotides and return one string containing letters representing amino acids.
+
+Here an example is presented:
+
+```{r}
+codons <- c("ACG","UUG")
+codon_to_AA(codons)
+```
+
 ### Amino acid frequency plot
 
 The amino acid plot illustrates the count of each amino acids within an amino acid sequence in a barchart
@@ -49,6 +95,25 @@ The amino acid count of insulin is illustrated with the function below:
 INS <- "MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN"
 
 amino_acid_plot(INS)
+```
+
+### Merging all the functions
+
+The functions can be used all together, where you can illustrate the frequency of different amino acids, based on random base sampling. This can illustrate that if the base is sampled randomly, then some amino acids are of higher likability than others.
+
+```{r}
+#150 random bases are sampled
+dna_bases <- nucleotide_sequence_sampler(150)
+#Bases are converted to RNA string
+rna_bases <- convert_T_to_U(dna_bases)
+#The rna bases are converted into codons
+codons <- extract_codons(rna_bases)
+#The codons are translated into an amino acid sequence
+aa_sequence <- codon_to_AA(codons)
+#The amino acids are illustrated in a count barplot
+plot <- amino_acid_plot(aa_sequence)
+
+plot
 ```
 
 ## Further development of hejpakken
