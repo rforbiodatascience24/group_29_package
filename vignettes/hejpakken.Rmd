@@ -26,7 +26,7 @@ This package is used for creating functions that can help automation of converti
 
 ## Functions of hejpakken
 
-In hejpakken there are 5 builtin functions:
+In hejpakken there are 5 build-in functions:
 
 1.  Nucleotide_sequence_sampler
 
@@ -38,7 +38,7 @@ In hejpakken there are 5 builtin functions:
 
 5.  Amino_acid_plot
 
-### Nucleotide sequence sampler
+### 1. Nucleotide sequence sampler
 
 The nucleotide sequence sampler samples a selected number of DNA bases into a DNA sequence.
 
@@ -49,7 +49,7 @@ example_sequence_24 <- nucleotide_sequence_sampler(24)
 print(example_sequence_24)
 ```
 
-### Convert T to U
+### 2. Convert T to U
 
 The converter of T to U changes DNA sequences into RNA sequences. This is done by converting "T" to "U" in strings.
 
@@ -63,9 +63,9 @@ RNA_sequence <- convert_T_to_U(DNA_sequence)
 RNA_sequence
 ```
 
-### Extract codons
+### 3. Extract codons
 
-The code extract function splits one string representing a RNA sequence into several different codons. For each three letters (nucleotides) in the input string, a new string containing three letters will be formed.
+The code extract function splits one string representing a RNA sequence into several different codons. For each three letters (nucleotides) in the input string, a new string containing three letters (codons) will be formed.
 
 An example is presented here:
 
@@ -74,7 +74,7 @@ RNA_sequence <- "ACGUUGCA"
 extract_codons(RNA_sequence)
 ```
 
-### Codon to Amino Acids
+### 4. Codon to Amino Acids
 
 This function takes a list of strings containing three letters representing nucleotides and return one string containing letters representing amino acids.
 
@@ -85,9 +85,9 @@ codons <- c("ACG","UUG")
 codon_to_AA(codons)
 ```
 
-### Amino acid frequency plot
+### 5. Amino acid frequency plot
 
-The amino acid plot illustrates the count of each amino acids within an amino acid sequence in a barchart
+The amino acid plot illustrates the count of each amino acids within an amino acid sequence in a bar chart.
 
 The amino acid count of insulin is illustrated with the function below:
 
