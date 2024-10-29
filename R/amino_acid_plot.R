@@ -2,8 +2,8 @@
 #'
 #' @param aa_sequence Amino acid sequence in a character string
 #'
-#'@importFrom ggplot2 ggplot aes geom_col theme_bw theme
-#'@importFrom stringr str_split boundary str_count
+#' @importFrom ggplot2 ggplot aes geom_col theme_bw theme
+#' @importFrom stringr str_split boundary str_count
 #'
 #' @return A plot of the frequency of the different amino acids present in the sequence
 #' @export
