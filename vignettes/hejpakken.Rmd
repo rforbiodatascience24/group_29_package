@@ -19,10 +19,10 @@ library(hejpakken)
 ```
 
 ## Description
-Hej, 
 
-This package is used for creating functions that can help automation of converting a DNA sequence into a sequence of amino acids. This represents the different steps in protein synthesis which is a part of the central dogma. 
+Hej,
 
+This package is used for creating functions that can help automation of converting a DNA sequence into a sequence of amino acids. This represents the different steps in protein synthesis which is a part of the central dogma.
 
 ## Functions of hejpakken
 
@@ -32,7 +32,7 @@ In hejpakken there are 5 builtin functions:
 
 2.  convert_T_to_U
 
-3.  codons_function
+3.  extract_codons
 
 4.  codon_to_AA
 
@@ -51,10 +51,10 @@ print(example_sequence_24)
 
 ### Convert T to U
 
-The converter of T to U changes DNA sequences into RNA sequences. 
-This is done by converting "T" to "U" in strings. 
+The converter of T to U changes DNA sequences into RNA sequences. This is done by converting "T" to "U" in strings.
 
-An example is written here: 
+An example is written here:
+
 ```{r}
 DNA_sequence <- "ACGTTGCA" 
 
@@ -63,20 +63,27 @@ RNA_sequence <- convert_T_to_U(DNA_sequence)
 RNA_sequence
 ```
 
-### Code Extract
+### Extract codons
 
 The code extract function splits one string representing a RNA sequence into several different codons. For each three letters (nucleotides) in the input string, a new string containing three letters will be formed.
 
 An example is presented here:
 
+```{r}
+RNA_sequence <- "ACGUUGCA"
+extract_codons(RNA_sequence)
+```
 
 ### Codon to Amino Acids
 
-This function takes a list of strings containing three letters representing nucleotides and return one string containing letters representing amino acids. 
+This function takes a list of strings containing three letters representing nucleotides and return one string containing letters representing amino acids.
 
 Here an example is presented:
 
-
+```{r}
+codons <- c("ACG","UUG")
+codon_to_AA(codons)
+```
 
 ### Amino acid frequency plot
 
