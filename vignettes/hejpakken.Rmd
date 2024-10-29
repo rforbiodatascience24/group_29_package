@@ -52,3 +52,11 @@ amino_acid_plot(INS)
 ```
 
 ## Further development of hejpakken
+
+Other functions that could be included could be to categorize the amino acids based on chemical properties like their hydrophobic hydrophilic characteristics , acidic/basic conditions, polarity and aliphatic/aromatic properties.
+
+In function five, the two packages were added as dependencies...
+
+It's a good idea to limit the number of dependencies of the package, because...
+
+The differences between adding an `@importFrom package function` tag to a function description compared to using `package::function()` is...
