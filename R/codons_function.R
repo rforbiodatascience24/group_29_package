@@ -6,7 +6,8 @@
 #' @return description of function output
 #' @export
 #'
-#' @examples
+#' @examples extract_codons("AGCTGACGTAG", start = 1)
+#[1] "AGC" "TGA" "CGT"
 extract_codons <- function(sequence, start = 1){
   lenght <- nchar(sequence)
   codons <- substring(sequence,
@@ -15,5 +16,4 @@ extract_codons <- function(sequence, start = 1){
   return(codons)
 }
 
-extract_codons("AGCTGACGTAG", start = 1)
-#[1] "AGC" "TGA" "CGT"
+
