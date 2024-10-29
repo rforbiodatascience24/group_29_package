@@ -1,0 +1,54 @@
+---
+title: "hejpakken"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{hejpakken}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(hejpakken)
+```
+
+## Description
+
+## Functions of hejpakken
+
+In hejpakken there are 5 builtin functions:
+
+1.  Nucleotide_sequence_sampler
+
+2.  Amino_acid_plot
+
+### Nucleotide sequence sampler
+
+The nucleotide sequence sampler samples a selected number of DNA bases into a DNA sequence.
+
+As an example, here is a sequence of 24 bases:
+
+```{r}
+example_sequence_24 <- nucleotide_sequence_sampler(24)
+print(example_sequence_24)
+```
+
+### Amino acid frequency plot
+
+The amino acid plot illustrates the count of each amino acids within an amino acid sequence in a barchart
+
+The amino acid count of insulin is illustrated with the function below:
+
+```{r}
+INS <- "MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN"
+
+amino_acid_plot(INS)
+```
+
+## Further development of hejpakken
