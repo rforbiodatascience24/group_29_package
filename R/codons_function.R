@@ -14,3 +14,6 @@ extract_codons <- function(sequence, start = 1){
                       last = seq(from = 3+start-1, to = lenght, by = 3))
   return(codons)
 }
+
+extract_codons("AGCTGACGTAG", start = 1)
+#[1] "AGC" "TGA" "CGT"
