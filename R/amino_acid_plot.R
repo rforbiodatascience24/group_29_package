@@ -34,3 +34,4 @@ amino_acid_plot <- function(aa_sequence){
 
   return(aa_count_plot)
 }
+
