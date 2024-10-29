@@ -30,12 +30,19 @@ Encoding: UTF-8
 LazyData: true
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)
+RoxygenNote: 7.2.3
 Imports: 
     ggplot2 (>= 3.4.3),
+<<<<<<< HEAD
     stringr (>= 1.5.0),
     testthat
 RoxygenNote: 7.3.2
+=======
+    stringr (>= 1.5.0)
+Config/testthat/edition: 3
+>>>>>>> 47418b69357edf3a956523f5b5543840e378bb1c
