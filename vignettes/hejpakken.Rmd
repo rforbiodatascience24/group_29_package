@@ -1,6 +1,6 @@
 ---
 title: "hejpakken"
-output: rmarkdown::html_vignette
+output: rmarkdown::pdf_document
 vignette: >
   %\VignetteIndexEntry{hejpakken}
   %\VignetteEngine{knitr::rmarkdown}
@@ -19,27 +19,18 @@ library(hejpakken)
 ```
 
 ## Description
-Hej, 
-
-This package is used for creating functions that can help automation of converting a DNA sequence into a sequence of amino acids. This represents the different steps in protein synthesis which is a part of the central dogma. 
+Hej. This package contains functions that can help automation of converting a DNA sequence into a sequence of amino acids. This represents the different steps in protein synthesis which is a part of the central dogma. 
 
 
 ## Functions of hejpakken
-
 In hejpakken there are 5 builtin functions:
-
 1.  Nucleotide_sequence_sampler
-
 2.  convert_T_to_U
-
 3.  codons_function
-
 4.  codon_to_AA
-
 5.  Amino_acid_plot
 
 ### Nucleotide sequence sampler
-
 The nucleotide sequence sampler samples a selected number of DNA bases into a DNA sequence.
 
 As an example, here is a sequence of 24 bases:
@@ -50,7 +41,6 @@ print(example_sequence_24)
 ```
 
 ### Convert T to U
-
 The converter of T to U changes DNA sequences into RNA sequences. 
 This is done by converting "T" to "U" in strings. 
 
@@ -64,14 +54,12 @@ RNA_sequence
 ```
 
 ### Code Extract
-
 The code extract function splits one string representing a RNA sequence into several different codons. For each three letters (nucleotides) in the input string, a new string containing three letters will be formed.
 
 An example is presented here:
 
 
 ### Codon to Amino Acids
-
 This function takes a list of strings containing three letters representing nucleotides and return one string containing letters representing amino acids. 
 
 Here an example is presented:
@@ -79,7 +67,6 @@ Here an example is presented:
 
 
 ### Amino acid frequency plot
-
 The amino acid plot illustrates the count of each amino acids within an amino acid sequence in a barchart
 
 The amino acid count of insulin is illustrated with the function below:
@@ -91,7 +78,6 @@ amino_acid_plot(INS)
 ```
 
 ### Merging all the functions
-
 The functions can be used all together, where you can illustrate the frequency of different amino acids, based on random base sampling. This can illustrate that if the base is sampled randomly, then some amino acids are of higher likability than others.
 
 ```{r}
