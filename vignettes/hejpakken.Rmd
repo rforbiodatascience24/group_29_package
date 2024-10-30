@@ -62,7 +62,7 @@ An example is presented here:
 ```{r}
 #| echo: true
 RNA_sequence <- "ACGUUGCA"
-extract_codons(RNA_sequence)e
+extract_codons(RNA_sequence)
 ```
 
 

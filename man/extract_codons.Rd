@@ -4,19 +4,18 @@
 \alias{extract_codons}
 \title{Function three}
 \usage{
-extract_codons(sequence, start = 1)
+extract_codons(RNA_sequence, start = 1)
 }
 \arguments{
-\item{start}{description of parameter}
-
-\item{dna}{description of parameter}
+\item{RNA_sequence}{gets extracted into codons of three nucleotide each}
 }
 \value{
-description of function output
+strings of different codons each with three nucleotides from RNA sequence
 }
 \description{
 Function three
 }
 \examples{
-extract_codons("AGCTGACGTAG", start = 1)
+RNA_sequence <- "ACGUUGCA"
+extract_codons(RNA_sequence)
 }
