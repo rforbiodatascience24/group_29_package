@@ -5,7 +5,8 @@
 #' @return a RNA sequence of nucleotides containing letters "A", "C", "G" and "U"
 #' @export
 #'
-#' @examples convert_T_to_U("ACGTTGCA")
+#' @examples
+#' convert_T_to_U("ACGTTGCA")
 convert_T_to_U <- function(DNA_sequence){
   RNA_sequence <- gsub("T", "U", DNA_sequence)
   return(RNA_sequence)

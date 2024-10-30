@@ -15,4 +15,3 @@ extract_codons <- function(RNA_sequence, start = 1){
                       last = seq(from = 3+start-1, to = lenght, by = 3))
   return(codons)
 }
-
