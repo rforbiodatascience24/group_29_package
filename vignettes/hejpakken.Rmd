@@ -21,11 +21,9 @@ knitr::opts_chunk$set(
 library("hejpakken")
 ```
 
-## Description
+## Description of hejpakken package
 
-Hej,
-
-This package is used for creating functions that can help automation of converting a DNA sequence into a sequence of amino acids. This represents the different steps in protein synthesis which is a part of the central dogma.
+This package called hejpakken is used for creating functions that can help automation of converting a DNA sequence into a sequence of amino acids. This represents the different steps in protein synthesis which is a part of the central dogma.
 
 ## Functions of hejpakken
 
@@ -73,7 +71,7 @@ An example is presented here:
 ```{r}
 #| echo: true
 RNA_sequence <- "ACGUUGCA"
-extract_codons(RNA_sequence)
+extract_codons(RNA_sequence)e
 ```
 
 ### 4. Codon to Amino Acids
@@ -123,8 +121,8 @@ amino_acid_plot(aa_sequence)
 
 Other functions that could be included could be to categorize the amino acids based on chemical properties like their hydrophobic hydrophilic characteristics , acidic/basic conditions, polarity and aliphatic/aromatic properties.
 
-In function five, the two packages were added as dependencies...
+In function five, the two packages were added as dependencies by using `@importFrom package function` tag to load the ggplot2 and stringr packages.
 
-It's a good idea to limit the number of dependencies of the package, because...
+It's a good idea to limit the number of dependencies of the package, because dependencies can increase the risk of compatibility issues, slow down package installation, leading to bloating. It can increase the potential for errors if one of the dependencies updates or changes functionality. Fewer dependencies help to keep your package lighter, more stable for others to use.
 
-The differences between adding an `@importFrom package function` tag to a function description compared to using `package::function()` is...
+The differences between adding an `@importFrom package function` tag to a function description compared to using `package::function()` is that `@importFrom package function` adds the function to your package’s namespace as a formal dependency, loading the external package whenever your package is loaded. In contrast, `package::function()` does not add it to the namespace, loading the package only when needed, which keeps your package lighter. `@importFrom` also improves readability by importing the function once, avoiding repeated `package::function()` calls, whereas `package::function()` specifies the function’s source each time, making the code clearer but slightly more detailed.
