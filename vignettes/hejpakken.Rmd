@@ -10,68 +10,79 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.width=4, 
+  fig.align = "center",
+  fig.asp = 0.618
 )
 ```
 
 ```{r setup}
-library(hejpakken)
+library("hejpakken")
 ```
 
-## Description
-Hej. This package contains functions that can help automation of converting a DNA sequence into a sequence of amino acids. This represents the different steps in protein synthesis which is a part of the central dogma. 
-
+## Description of hejpakken package
+This package called hejpakken is used for creating functions that can help automation of converting a DNA sequence into a sequence of amino acids. This represents the different steps in protein synthesis which is a part of the central dogma.
 
 ## Functions of hejpakken
-In hejpakken there are 5 builtin functions:
+In hejpakken there are 5 build-in functions:
 1.  Nucleotide_sequence_sampler
 2.  convert_T_to_U
-3.  codons_function
+3.  extract_codons
 4.  codon_to_AA
 5.  Amino_acid_plot
 
-### Nucleotide sequence sampler
+### 1. Nucleotide sequence sampler
 The nucleotide sequence sampler samples a selected number of DNA bases into a DNA sequence.
 
 As an example, here is a sequence of 24 bases:
 
 ```{r}
-example_sequence_24 <- nucleotide_sequence_sampler(24)
-print(example_sequence_24)
+#| echo: true
+nucleotide_sequence_sampler(24)
 ```
 
-### Convert T to U
-The converter of T to U changes DNA sequences into RNA sequences. 
-This is done by converting "T" to "U" in strings. 
+### 2. Convert T to U
+The converter of T to U changes DNA sequences into RNA sequences. This is done by converting "T" to "U" in strings.
 
-An example is written here: 
+An example is written here:
+
 ```{r}
+#| echo: true
 DNA_sequence <- "ACGTTGCA" 
-
-RNA_sequence <- convert_T_to_U(DNA_sequence)
-
-RNA_sequence
+convert_T_to_U(DNA_sequence)
 ```
 
-### Code Extract
-The code extract function splits one string representing a RNA sequence into several different codons. For each three letters (nucleotides) in the input string, a new string containing three letters will be formed.
+
+### 3. Extract codons
+The code extract function splits one string representing a RNA sequence into several different codons. For each three letters (nucleotides) in the input string, a new string containing three letters (codons) will be formed.
 
 An example is presented here:
 
+```{r}
+#| echo: true
+RNA_sequence <- "ACGUUGCA"
+extract_codons(RNA_sequence)e
+```
 
-### Codon to Amino Acids
-This function takes a list of strings containing three letters representing nucleotides and return one string containing letters representing amino acids. 
+
+
+### 4. Codon to Amino Acids
+This function takes a list of strings containing three letters representing nucleotides and return one string containing letters representing amino acids.
 
 Here an example is presented:
 
+```{r}
+#| echo: true
+codons <- c("ACG","UUG")
+codon_to_AA(codons)
+```
 
-
-### Amino acid frequency plot
-The amino acid plot illustrates the count of each amino acids within an amino acid sequence in a barchart
-
+### 5. Amino acid frequency plot
 The amino acid count of insulin is illustrated with the function below:
 
 ```{r}
+#| echo: true
 INS <- "MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN"
 
 amino_acid_plot(INS)
@@ -81,6 +92,7 @@ amino_acid_plot(INS)
 The functions can be used all together, where you can illustrate the frequency of different amino acids, based on random base sampling. This can illustrate that if the base is sampled randomly, then some amino acids are of higher likability than others.
 
 ```{r}
+#| echo: true
 #150 random bases are sampled
 dna_bases <- nucleotide_sequence_sampler(150)
 #Bases are converted to RNA string
@@ -90,9 +102,14 @@ codons <- extract_codons(rna_bases)
 #The codons are translated into an amino acid sequence
 aa_sequence <- codon_to_AA(codons)
 #The amino acids are illustrated in a count barplot
-plot <- amino_acid_plot(aa_sequence)
-
-plot
+amino_acid_plot(aa_sequence)
 ```
 
 ## Further development of hejpakken
+Other functions that could be included could be to categorize the amino acids based on chemical properties like their hydrophobic hydrophilic characteristics , acidic/basic conditions, polarity and aliphatic/aromatic properties.
+
+In function five, the two packages were added as dependencies by using `@importFrom package function` tag to load the ggplot2 and stringr packages.
+
+It's a good idea to limit the number of dependencies of the package, because dependencies can increase the risk of compatibility issues, slow down package installation, leading to bloating. It can increase the potential for errors if one of the dependencies updates or changes functionality. Fewer dependencies help to keep your package lighter, more stable for others to use.
+
+The differences between adding an `@importFrom package function` tag to a function description compared to using `package::function()` is that `@importFrom package function` adds the function to your package’s namespace as a formal dependency, loading the external package whenever your package is loaded. In contrast, `package::function()` does not add it to the namespace, loading the package only when needed, which keeps your package lighter.
