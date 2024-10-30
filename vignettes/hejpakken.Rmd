@@ -1,6 +1,6 @@
 ---
 title: "hejpakken"
-output: rmarkdown::html_vignette
+output: rmarkdown::pdf_document
 vignette: >
   %\VignetteIndexEntry{hejpakken}
   %\VignetteEngine{knitr::rmarkdown}
@@ -10,12 +10,15 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.width=4, 
+  fig.align = "center",
+  fig.asp = 0.618
 )
 ```
 
 ```{r setup}
-library(hejpakken)
+library("hejpakken")
 ```
 
 ## Description
@@ -45,8 +48,8 @@ The nucleotide sequence sampler samples a selected number of DNA bases into a DN
 As an example, here is a sequence of 24 bases:
 
 ```{r}
-example_sequence_24 <- nucleotide_sequence_sampler(24)
-print(example_sequence_24)
+#| echo: true
+nucleotide_sequence_sampler(24)
 ```
 
 ### Convert T to U
@@ -56,11 +59,9 @@ The converter of T to U changes DNA sequences into RNA sequences. This is done b
 An example is written here:
 
 ```{r}
+#| echo: true
 DNA_sequence <- "ACGTTGCA" 
-
-RNA_sequence <- convert_T_to_U(DNA_sequence)
-
-RNA_sequence
+convert_T_to_U(DNA_sequence)
 ```
 
 ### Extract codons
@@ -70,6 +71,7 @@ The code extract function splits one string representing a RNA sequence into sev
 An example is presented here:
 
 ```{r}
+#| echo: true
 RNA_sequence <- "ACGUUGCA"
 extract_codons(RNA_sequence)
 ```
@@ -81,6 +83,7 @@ This function takes a list of strings containing three letters representing nucl
 Here an example is presented:
 
 ```{r}
+#| echo: true
 codons <- c("ACG","UUG")
 codon_to_AA(codons)
 ```
@@ -92,6 +95,7 @@ The amino acid plot illustrates the count of each amino acids within an amino ac
 The amino acid count of insulin is illustrated with the function below:
 
 ```{r}
+#| echo: true
 INS <- "MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN"
 
 amino_acid_plot(INS)
@@ -102,6 +106,7 @@ amino_acid_plot(INS)
 The functions can be used all together, where you can illustrate the frequency of different amino acids, based on random base sampling. This can illustrate that if the base is sampled randomly, then some amino acids are of higher likability than others.
 
 ```{r}
+#| echo: true
 #150 random bases are sampled
 dna_bases <- nucleotide_sequence_sampler(150)
 #Bases are converted to RNA string
@@ -111,9 +116,7 @@ codons <- extract_codons(rna_bases)
 #The codons are translated into an amino acid sequence
 aa_sequence <- codon_to_AA(codons)
 #The amino acids are illustrated in a count barplot
-plot <- amino_acid_plot(aa_sequence)
-
-plot
+amino_acid_plot(aa_sequence)
 ```
 
 ## Further development of hejpakken
