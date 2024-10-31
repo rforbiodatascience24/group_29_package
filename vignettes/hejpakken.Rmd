@@ -5,7 +5,6 @@ vignette: >
   %\VignetteIndexEntry{hejpakken}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-Repository link: https://github.com/rforbiodatascience24/group_29_package
 ---
 
 ```{r, include = FALSE}
@@ -17,6 +16,8 @@ knitr::opts_chunk$set(
   fig.asp = 0.618
 )
 ```
+
+Repository link: <https://github.com/rforbiodatascience24/group_29_package>
 
 ```{r setup}
 library("hejpakken")
