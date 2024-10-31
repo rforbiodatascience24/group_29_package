@@ -1,6 +1,6 @@
 ---
 title: "hejpakken"
-output: rmarkdown::pdf_document
+output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{hejpakken}
   %\VignetteEngine{knitr::rmarkdown}
@@ -105,6 +105,6 @@ Other functions that could be included could be to categorize the amino acids ba
 
 In function five, the two packages were added as dependencies by using `@importFrom package function` tag to load the ggplot2 and stringr packages.
 
-It's a good idea to limit the number of dependencies of the package, because dependencies can increase the risk of compatibility issues, slow down package installation, leading to bloating. It can increase the potential for errors if one of the dependencies updates or changes functionality. Fewer dependencies help to keep your package lighter, more stable for others to use.
+It's a good idea to limit the number of dependencies of the package, since they can increase the risk of compatibility issues, slow down package installation. It can increase the potential for errors if one of the dependencies updates or changes functionality.
 
 The differences between adding an `@importFrom package function` tag to a function description compared to using `package::function()` is that `@importFrom package function` adds the function to your package’s namespace as a formal dependency, loading the external package whenever your package is loaded. In contrast, `package::function()` does not add it to the namespace, loading the package only when needed, which keeps your package lighter.
