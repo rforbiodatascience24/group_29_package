@@ -27,13 +27,11 @@ This package called hejpakken is used for creating functions that can help autom
 
 ## Functions of hejpakken
 
-In hejpakken there are 5 build-in functions: 1. Nucleotide_sequence_sampler 2. convert_T_to_U 3. extract_codons 4. codon_to_AA 5. Amino_acid_plot
+In hejpakken there are 5 build-in functions:
 
 ### 1. Nucleotide sequence sampler
 
-The nucleotide sequence sampler samples a selected number of DNA bases into a DNA sequence.
-
-As an example, here is a sequence of 24 bases:
+The nucleotide sequence sampler samples a selected number of DNA bases into a DNA sequence. As an example, here is a sequence of 24 bases:
 
 ```{r}
 #| echo: true
@@ -42,9 +40,7 @@ nucleotide_sequence_sampler(24)
 
 ### 2. Convert T to U
 
-The converter of T to U changes DNA sequences into RNA sequences. This is done by converting "T" to "U" in strings.
-
-An example is written here:
+The converter of T to U changes DNA sequences into RNA sequences. This is done by converting "T" to "U" in strings. An example is written here:
 
 ```{r}
 #| echo: true
@@ -54,9 +50,7 @@ convert_T_to_U(DNA_sequence)
 
 ### 3. Extract codons
 
-The code extract function splits one string representing a RNA sequence into several different codons. For each three letters (nucleotides) in the input string, a new string containing three letters (codons) will be formed.
-
-An example is presented here:
+The code extract function splits one string representing a RNA sequence into several different codons. For each three letters (nucleotides) in the input string, a new string containing three letters (codons) will be formed. An example is presented here:
 
 ```{r}
 #| echo: true
@@ -66,9 +60,7 @@ extract_codons(RNA_sequence)
 
 ### 4. Codon to Amino Acids
 
-This function takes a list of strings containing three letters representing nucleotides and return one string containing letters representing amino acids.
-
-Here an example is presented:
+This function takes a list of strings containing three letters representing nucleotides and return one string containing letters representing amino acids. Here an example is presented:
 
 ```{r}
 #| echo: true
@@ -102,8 +94,10 @@ codons <- extract_codons(rna_bases)
 #The codons are translated into an amino acid sequence
 aa_sequence <- codon_to_AA(codons)
 #The amino acids are illustrated in a count barplot
-amino_acid_plot(aa_sequence)
+p1 <- amino_acid_plot(aa_sequence)
 ```
+
+The plot has now been saved under the variable `p1`
 
 ## Further development of hejpakken
 
